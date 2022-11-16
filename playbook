@@ -1,0 +1,7 @@
+-  hosts: demo
+   become: yes
+   become_method: sudo
+   tsks:
+      - package: "name=httpd state=install"
+      - copy: "src=/root/inde.html dest=/var/www/html"
+      - service: "name=httpd state=started"
